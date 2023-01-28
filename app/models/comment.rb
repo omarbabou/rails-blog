@@ -4,5 +4,11 @@ class Comment < ApplicationRecord
 
   def update_comment_counter
     comment.increment!(:comments_counter)
+    
+  private
+
+  def update_comments_counter
+    post.increment!(:comments_counter)
+
   end
 end

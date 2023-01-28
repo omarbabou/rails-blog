@@ -126,7 +126,7 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 *Author1*
+👤 **Author1**
 
 - GitHub: [omarbabou](https://github.com/omarbabou)
 - LinkedIn: [Idrissa makoba omar](https://www.linkedin.com/in/idrissa-makoba-omar/)
