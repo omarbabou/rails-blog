@@ -69,9 +69,9 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **[User accounts]**
-- **[Post articles]**
-- **[Like and comment on articles]**
+- *[User accounts]*
+- *[Post articles]*
+- *[Like and comment on articles]*
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -126,11 +126,11 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 *Author1*
 
-- GitHub: [omarbabou](https://github.com/omarbabou)
-- LinkedIn: [Idrissa makoba omar](https://www.linkedin.com/in/idrissa-makoba-omar/)
-- twitter: [BabouOmar3](https://twitter.com/BabouOmar3)
+- GitHub: [soulemanou-software](https://github.com/soulemanou-software)
+- LinkedIn: [soulemanou kunchiefuh babanou](https://www.linkedin.com/in/soulemanou-kunchiefuh-babanou/)
+- twitter: [babanou237](https://twitter.com/Babanou237)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -178,6 +178,6 @@ Feel free to check the [issues page](../../issues/).
 
 This project is [MIT](./LICENSE) licensed.
 
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
