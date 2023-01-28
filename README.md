@@ -22,6 +22,13 @@ REQUIRED SECTIONS:
 After you're finished please remove all the comments and instructions!
 -->
 
+<div align="center">
+
+  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
+  <br/>
+
+  <h3><b>Microverse README Template</b></h3>
+
 </div>
 
 <!-- TABLE OF CONTENTS -->
@@ -50,13 +57,31 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Rails Blog <a name="about-project"></a>
+# 📖 Recipe App <a name="about-project"></a>
 
-> The Blog app is a classic example of a blog website. I create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+> Ruby on Rails basic project to build a structure for recipes, recipes details and where the user can login and then create a recipe accordingly.
 
-[Rails Blog App] is a web application that allows users post and comment on post made by other users.
+**[Recipe App]** Ruby on Rails basic project to build a structure for recipes, recipes details and where the user can login and then create a recipe accordingly.
 
 ## 🛠 Built With <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
+
+> Describe the tech stack and include only the relevant sections that apply to your project.
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+  </ul>
+</details>
+
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://expressjs.com/">Express.js</a></li>
+  </ul>
+</details>
 
 <details>
 <summary>Database</summary>
@@ -69,15 +94,17 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- *[User accounts]*
-- *[Post articles]*
-- *[Like and comment on articles]*
+- **[Add Foods]**
+- **[Recipes lists]**
+- **[Shopping lists]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
+
+> Add a link to your deployed project.
 
 - [Live Demo Link](https://yourdeployedapplicationlink.com)
 
@@ -86,6 +113,8 @@ After you're finished please remove all the comments and instructions!
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
+
+> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
@@ -103,8 +132,8 @@ Clone this repository to your desired folder:
 
 `cd my-folder`
 
-  - clone the repo using `git clone https://github.com/omarbabou/rails-blog.git`
-  - Change directory `cd rails-blog`
+  - clone the repo using `git clone https://github.com/omarbabou/recipe-app.git`
+  - Change directory `cd recipe-app`
 
 
 ### Install
@@ -126,11 +155,18 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 *Author1*
+> Mention all of the collaborators of this project.
+
+👤 **Author1**
 
 - GitHub: [omarbabou](https://github.com/omarbabou)
 - LinkedIn: [Idrissa makoba omar](https://www.linkedin.com/in/idrissa-makoba-omar/)
 - twitter: [BabouOmar3](https://twitter.com/BabouOmar3)
+
+👤 **Author2**
+
+- GitHub: [benardop](https://github.com/benardop)
+- LinkedIn: [Benard Pacho](https://www.linkedin.com/in/benardpacho/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -161,6 +197,8 @@ Feel free to check the [issues page](../../issues/).
 
 > Write a message to encourage readers to support your project
 
+If you like this project...
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
@@ -168,6 +206,8 @@ Feel free to check the [issues page](../../issues/).
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
 > Give credit to everyone who inspired your codebase.
+
+I would like to thank...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -178,6 +218,6 @@ Feel free to check the [issues page](../../issues/).
 
 This project is [MIT](./LICENSE) licensed.
 
-NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish.
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
