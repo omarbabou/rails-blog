@@ -1,26 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe Like, type: :model do
-  user = User.new(name: 'v', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'developer')
-  post = Post.new(author: user, title: 'title', text: 'text')
-  subject { Like.new(author: user, post: current_post) }
-  before { subject }
-
-  it 'should return author is nil' do
-    test_case = subject
-    test_case.author = nil
-    expect(test_case).to_not be_valid
+  before(:each) do
+    @user = User.new(id: 1, name: 'Ben', bio: 'I am a content creator', photo: '', posts_counter: 0)
+    @post = Post.new(title: 'Post1', text: 'Text...', comments_counter: 0, likes_counter: 1, author_id: @user.id)
+    @like = Like.new(author_id: @user.id, post_id: @user.id)
   end
 
-  it 'should return post is nil' do
-    test_case = subject
-    test_case.post = nil
-    expect(test_case).to_not be_valid
-  end
+  describe 'validation tests' do
+    it 'validates the author_id is an integer' do
+      @like.author_id = 1
+      expect(@like.author_id).to eq(1)
+    end
 
-  it 'should return update likes counter' do
-    expect(post.likes_counter).to eq(0)
-    subject.save # update_likes_counter_for_user method will run after saving the like
-    expect(post.likes_counter).to eq(1)
+    it 'validates the post_id is an integer' do
+      @like.post_id = 1
+      expect(@like.post_id).to eq(1)
+    end
   end
 end

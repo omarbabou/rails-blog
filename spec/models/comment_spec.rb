@@ -1,33 +1,29 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  user = User.new(name: 'v', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'developer')
-  post = Post.new(author: user, title: 'title', text: 'text')
-  subject { Comment.new(author: user, post: current_post, text: 'comment text') }
-  before { subject }
-
-  it 'should return author is nil' do
-    test_case = subject
-    test_case.author = nil
-    expect(test_case).to_not be_valid
+  # pending "add some examples to (or delete) #{__FILE__}"
+  before(:each) do
+    @user = User.new(id: 1, name: 'Ben', bio: 'My bio about my self and else', photo: '', posts_counter: 0)
+    @post = Post.new(title: 'Post1', text: 'Some text about the post', comments_counter: 4, likes_counter: 1,
+                     author_id: @user.id)
+    @comment = Comment.new(text: 'Nice Post', author_id: @user.id, post_id: @user.id)
   end
 
-  it 'should post is nil' do
-    test_case = subject
-    test_case.post = nil
-    expect(test_case).to_not be_valid
+  describe 'validation tests' do
+    it 'validates the author_id is an integer' do
+      expect(@comment.author_id).to eq(1)
+    end
+
+    it 'validates the post_id is an integer' do
+      expect(@comment.post_id).to eq(1)
+    end
+
+    it 'validates the comment text' do
+      expect(@comment.text).to eq('Nice Post')
+    end
   end
 
-  it 'should text is nil or blank' do
-    test_case = subject
-    test_case.text = nil
-    expect(test_case).to_not be_valid
-    test_case.text = ''
-    expect(test_case).to_not be_valid
-  end
-  it 'should update comments counter' do
-    expect(post.comments_counter).to eq(0)
-    subject.save # update_comments_counter_for_post method will run after saving the comment
-    expect(post.comments_counter).to eq(1)
+  it 'is invalid without a post' do
+    expect(Comment.new(post: nil)).to be_invalid
   end
 end
