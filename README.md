@@ -128,9 +128,9 @@ To run the project, execute the following command:
 
 👤 *Author1*
 
-- GitHub: [soulemanou-software](https://github.com/soulemanou-software)
-- LinkedIn: [soulemanou kunchiefuh babanou](https://www.linkedin.com/in/soulemanou-kunchiefuh-babanou/)
-- twitter: [babanou237](https://twitter.com/Babanou237)
+- GitHub: [omarbabou](https://github.com/omarbabou)
+- LinkedIn: [Idrissa makoba omar](https://www.linkedin.com/in/idrissa-makoba-omar/)
+- twitter: [BabouOmar3](https://twitter.com/BabouOmar3)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
