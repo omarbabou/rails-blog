@@ -1,2 +1,16 @@
-<h1>User</h1>
-<p>User Details</p>
+<%= stylesheet_link_tag "user_info" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My specific user</title>
+</head>
+<body>
+<main id ="container"> 
+  <%= render @user%>
+  <%= render partial: "bio" , locals:{bio:@user.bio}%>
+  <%= render partial: "user_information", as: "post" , collection: @user.recent_posts%>
+  <button id="show-posts"><%= link_to "See all posts", user_posts_path(@user) %></button>
+  </main>
+</body>
+</html>

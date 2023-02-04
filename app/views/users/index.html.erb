@@ -1,2 +1,13 @@
-<h1>Users List</h1>
-<p>list of all users</p>
+<%= stylesheet_link_tag "users" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My users</title>
+</head>
+<body>
+    <main id ="container">  
+    <%= render @users %>
+    </main>
+</body>
+</html>
