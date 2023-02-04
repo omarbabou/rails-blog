@@ -1,2 +1,24 @@
-<h1>Posts List</h1>
-<p>list of posts for any user</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>See user's posts</title>
+</head>
+<body>
+  <main id ="container"> 
+  <%= render partial:'users/user', locals:{user: @user} %>
+       <%=link_to new_user_post_path do%>
+   <button class="create-post">Create post</button>
+  <%end%>
+   <% @posts.each do |post| %>
+  <%= render post%>
+  <%if post.comments.length > 0 %>
+   <section class="comment-section">
+    <%= render partial:'comments', as: 'comment', collection:post.recent_comments%>
+   </section>
+   <%end%>
+   <%end%>
+  <button id="show-posts">My pagination</button>
+</main>     
+</body>
+</html>

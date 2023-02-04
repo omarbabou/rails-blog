@@ -1,0 +1,33 @@
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#bio,
+.user-info {
+  width: 51.4vw;
+  font-size: 18px;
+  border: 2px solid black;
+  padding: 1rem;
+}
+
+h3,
+h4 {
+  margin: 0;
+}
+
+small {
+  float: right;
+  font-weight: 500;
+}
+
+#show-posts {
+  border: 2px solid black;
+  border-bottom-width: 4px;
+  background: white;
+  font-weight: bold;
+  padding: 0.5rem 0.5rem;
+  font-size: 17px;
+  cursor: pointer;
+}

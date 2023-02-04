@@ -1,0 +1,5 @@
+<%=form_with model:[:user,:post, comment], method: :post, id: 'form' do |form| %>
+  <%=label(:comment,:Comment)%> 
+  <%=form.text_area :text%>
+  <%=form.submit "Add new comment" %>
+<% end %>

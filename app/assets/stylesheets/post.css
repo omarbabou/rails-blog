@@ -1,0 +1,50 @@
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-section {
+  width: 51.4vw;
+  font-size: 18px;
+  border: 2px solid black;
+  padding: 1rem;
+}
+
+.comment {
+  margin-left: 0.25rem;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+#blue,
+#red {
+  text-align: center;
+  font-size: 18px;
+}
+
+#blue {
+  color: blue;
+}
+
+#red {
+  color: red;
+}
+
+.create-comment,
+.add-like,
+.create-post {
+  border: 2px solid black;
+  border-bottom-width: 4px;
+  background: white;
+  font-weight: bold;
+  padding: 0.5rem 0.5rem;
+  font-size: 15px;
+  cursor: pointer;
+}

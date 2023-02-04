@@ -11,6 +11,16 @@
   </head>
 
   <body>
+     <%if flash[:error]%>
+     <p id="red"><%=flash[:error]%></p> 
+     <%end%>
+     <%if flash[:success]%>
+      <p id="blue"><%=flash[:success]%></p> 
+     <%end%>
     <%= yield %>
+         <%
+     flash[:error] = nil
+     flash[:success] = nil 
+    %> 
   </body>
 </html>
