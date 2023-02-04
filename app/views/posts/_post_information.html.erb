@@ -1,0 +1,10 @@
+<section class="user-info">
+<h4><%=post.title%> by <%=User.find(post.author_id).name%></h4>
+ <p><%=post.text%></p>
+ <small>
+    Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%>       
+</small> 
+</section>
+<section class="comment-section">
+   <%= render partial:'comments', as: 'comment', collection:post.comments%>
+</section>  

@@ -1,2 +1,12 @@
-<h1>Post</h1>
-<p>Details of a post for any user</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My specific post</title>
+</head>
+<body>
+  <main id ="container">
+   <%= render partial: "post_information", locals: {post:@post}%>
+  </main> 
+</body>
+</html>
