@@ -12,7 +12,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'shows correct content in the view' do
-      expect(response.body).to include('list of all usres')
+      expect(response.body).to include('list of all users')
     end
   end
 
