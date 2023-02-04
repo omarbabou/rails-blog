@@ -10,7 +10,7 @@
    <% @posts.each do |post| %>
   <%= render post%>
    <section class="comment-section">
-    <%= render partial:'comments', as: 'comment', collection:post.recents_comments%>
+    <%= render partial:'comments', as: 'comment', collection:post.recent_comments%>
    </section>
    <%end%>
   <button id="show-posts">My pagination</button>
