@@ -70,6 +70,17 @@ After you're finished please remove all the comments and instructions!
 - *[User accounts]*
 - *[Post articles]*
 - *[Like and comment on articles]*
+- **[User accounts]**
+- **[Post articles]**
+- **[Like and comment on articles]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://yourdeployedapplicationlink.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -117,6 +128,8 @@ To run the project, execute the following command:
 ## 👥 Authors <a name="authors"></a>
 
 👤 *Author1*
+
+👤 **Author1**
 
 - GitHub: [omarbabou](https://github.com/omarbabou)
 - LinkedIn: [Idrissa makoba omar](https://www.linkedin.com/in/idrissa-makoba-omar/)
