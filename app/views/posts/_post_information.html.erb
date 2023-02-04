@@ -1,0 +1,16 @@
+<section class="user-info">
+<h4><%=post.title%> by <%=post.author.name%></h4>
+ <p><%=post.text%></p>
+ <small>
+    Comments: <%=post.comments_counter%>, Likes: <%=post.likes_counter%>       
+</small> 
+<%=link_to new_user_post_comment_path(post_id:post.id) do%>
+   <button class="create-comment">Create comment</button>
+  <%end%> 
+<%=render partial:'likes/like', locals:{like:@like,post_id:post.id,distination:params[:action]}%> 
+</section>
+<%if post.comments.length > 0 %>
+<section class="comment-section">
+<%= render partial:'comments', as: 'comment', collection:comments%>
+</section>  
+<%end%>

@@ -57,11 +57,11 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Recipe App <a name="about-project"></a>
+# 📖 Rails Blog App <a name="about-project"></a>
 
-> Ruby on Rails basic project to build a structure for recipes, recipes details and where the user can login and then create a recipe accordingly.
+> The Blog app is a classic example of a blog website. I create a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-**[Recipe App]** Ruby on Rails basic project to build a structure for recipes, recipes details and where the user can login and then create a recipe accordingly.
+**[Rails Blog App]** is a web application that allows users post and comment on post made by other users.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -94,9 +94,9 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **[Add Foods]**
-- **[Recipes lists]**
-- **[Shopping lists]**
+- **[User accounts]**
+- **[Post articles]**
+- **[Like and comment on articles]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -132,8 +132,8 @@ Clone this repository to your desired folder:
 
 `cd my-folder`
 
-  - clone the repo using `git clone https://github.com/omarbabou/recipe-app.git`
-  - Change directory `cd recipe-app`
+  - clone the repo using `git clone https://github.com/omarbabou/rails-blog-app.git`
+  - Change directory `cd rails-blog-app`
 
 
 ### Install
@@ -162,11 +162,6 @@ To run the project, execute the following command:
 - GitHub: [omarbabou](https://github.com/omarbabou)
 - LinkedIn: [Idrissa makoba omar](https://www.linkedin.com/in/idrissa-makoba-omar/)
 - twitter: [BabouOmar3](https://twitter.com/BabouOmar3)
-
-👤 **Author2**
-
-- GitHub: [benardop](https://github.com/benardop)
-- LinkedIn: [Benard Pacho](https://www.linkedin.com/in/benardpacho/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
