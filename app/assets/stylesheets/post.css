@@ -1,0 +1,16 @@
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .comment-section {
+    width: 51.4vw;
+    font-size: 18px;
+    border: 2px solid black;
+    padding: 1rem;
+  }
+
+  .comment {
+    margin-left: 0.25rem;
+  }
