@@ -1,35 +1,44 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   def index
-    @posts = User.find(params[:user_id]).posts.includes(:comments)
-    @user = User.find(params[:user_id])
+    @user = all_users_post_controller
+    @posts = @user.posts.includes(:comments).order('id asc')
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:id])
+    @post = current_post
   end
 
   def new
-    @post = Post.new
+    respond_to do |format|
+      format.html { render :new, locals: { post: Post.new } }
+    end
   end
 
   def create
-    @post = Post.new(post_params)
-
-    respond_to do |format|
-      format.html do
-        if @post.save
-          redirect_to user_post_path(current_user, @post)
-        else
-          redirect_to new_user_post_path(current_user)
-        end
-      end
+    user = current_user
+    post = Post.new(post_params)
+    post.author = user
+    if post.save
+      flash[:success] = 'All Post were saved successfully'
+      redirect_to user_posts_url
+    else
+      flash[:error] = 'Error: Could not save posts'
+      redirect_to new_user_post_url
     end
   end
 
   private
 
+  def destroy
+    @post = Post.find(params[:id])
+    @author = @post.author
+    @author.posts_counter -= 1
+    @post.destroy!
+    redirect_to user_posts_path(id: @author.id), notice: 'Post was deleted successfully!'
+  end
+
   def post_params
-    params.require(:post).permit(:title, :text).merge(author: current_user, comments_counter: 0, likes_counter: 0)
+    params.require(:post).permit(:title, :text)
   end
 end

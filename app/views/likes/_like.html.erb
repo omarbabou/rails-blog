@@ -1,0 +1,5 @@
+<%=
+form_with model:like, url:user_post_likes_url(post_id:post_id,distination: distination), 
+method: :post, id: 'form' do |form| %>
+  <%=form.submit "Add like", class:"add-like" %>
+<% end %>

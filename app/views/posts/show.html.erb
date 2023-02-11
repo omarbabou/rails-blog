@@ -1,15 +1,37 @@
-<div class="post">
-  <div class="title-info">
-    <h2><%= @post.title%></h2>
-    <p>Comments: <%= @post.comments_counter%> Likes: <%= @post.likes_counter%></p>
-  </div>
-  <p><%= @post.text%></p>
-  <p class="post-author">Written by: <%= @post.author.name%></p>
-</div>
-<div class="comments">
-  <% @post.comments.each do |comment|%>
-    <p><%= User.find(comment.author_id).name %>: <%= comment.text %></p>
-  <%end%>
-</div>
-<button><%= link_to 'Add a comment', new_user_post_comment_path(@user, @post) %></button>
-<div class='like'><%= button_to 'Like', user_post_likes_path(@user, @post), method: :post %></div>
+<section class="posts-section">
+  <% if @user %>
+    <% if @post %>
+      <div class="bordered-box">
+        <div>
+          <h2><%= @post.title %> by <%= @post.author.name %></h2>
+          <div class="post-info">Comments: <%= @post.comments.length %>, Likes: <%= @post.likes.length %></div>
+          <%= render partial: "posts/like", locals: { url: "/users/#{@user.id}/posts/#{@post.id}/like", post: @post } %>
+           <% if can? :destroy, @post %>
+    <%= button_to "Delete post", user_post_path(user_id: @post.author.id, post_id: @post.id), method: :delete, class: 'mb-10 hover:opacity-60'  %>
+  <% end %>
+        </div>
+        <p>
+        <%= @post.text %>
+        </p>
+      </div>
+      <%= render partial: "posts/add_comment" %>
+      <% if @post.comments.length != 0 %>
+        <ul class="bordered-box">
+          <% @post.recent_comments.each do |comment| %>
+            <li>
+            <span><%= comment.author.name %> : </span>
+            <span> <%= comment.text %> </span>
+            </li>
+          <% end %>
+        </ul>
+      <% else %>
+        <h2>No comments added </h2>
+      <% end %>
+      
+    <% else %>
+      <h2>Not founded</h2>
+    <% end %>
+  <% else %>
+    <h1>Not founded</h1>
+  <% end %>
+</section>  

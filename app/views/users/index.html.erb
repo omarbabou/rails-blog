@@ -1,11 +1,13 @@
-<div>
-<% @users.each do |user| %>
-<div class="user-container">
-      <%= image_tag user.photo, :class => "photo", alt: "user profile" %>
-      <div class="user-info">
-        <h1><%= link_to user.name, user, :class => 'link'%></h1>
-        <h4>Number of posts: <%= user.posts_counter%></h4>
-      </div>
-    </div>
-<% end %>
-</div>
+<%= stylesheet_link_tag "users" %>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>My users</title>
+</head>
+<body>
+    <main id ="container">  
+    <%= render @users %>
+    </main>
+</body>
+</html>
