@@ -1,0 +1,52 @@
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: unset;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.card {
+  width: 40vw;
+  border: 2px solid black;
+  padding: 1.5rem 2rem 1.5rem 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.card > p {
+  align-self: flex-end;
+  margin: 0;
+  padding-top: 16px;
+  font-weight: bold;
+}
+
+.user {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.card > h2 {
+  margin: 0 auto 0 auto;
+}
+
+.image {
+  border: 2px solid black;
+  width: 10vw;
+  height: 13vh;
+}
