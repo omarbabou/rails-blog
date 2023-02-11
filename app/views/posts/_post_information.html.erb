@@ -10,7 +10,7 @@
 <%=render partial:'likes/like', locals:{like:@like,post_id:post.id,distination:params[:action]}%> 
 </section>
 <%if post.comments.length > 0 %>
-<section class="comment-section"> 
+<section class="comment-section">
      <%= render partial:'comments', ass: 'comment', collection:post.comments%>
 </section>  
 <%end%>
