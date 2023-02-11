@@ -1,29 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blog</title>
+    <title>BlogApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
   </head>
 
   <body>
-     <p id="red"><%=flash[:error]%></p> 
-      <p id="blue"><%=flash[:success]%></p> 
-      <p class="alert"><%= alert %></p>
-        <%= yield %>
-    <%if flash[:error]%>
-       <p id="red"><%=flash[:error]%></p> 
-     <%end%>
-     <%if flash[:success]%>
-      <p id="blue"><%=flash[:success]%></p> 
-     <%end%>
     <%= yield %>
-     <%
-     flash[:error] = nil
-     flash[:success] = nil 
-    %> 
   </body>
 </html>

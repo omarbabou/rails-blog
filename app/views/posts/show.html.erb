@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>My specific post</title>
-</head>
-<body>
-  <main id ="container">
-   <%= render partial: "post_information", locals: {post:@post}%>
-  </main> 
-</body>
-</html>
+<div class="post">
+  <div class="title-info">
+    <h2><%= @post.title%></h2>
+    <p>Comments: <%= @post.comments_counter%> Likes: <%= @post.likes_counter%></p>
+  </div>
+  <p><%= @post.text%></p>
+  <p class="post-author">Written by: <%= @post.author.name%></p>
+</div>
+<div class="comments">
+  <% @post.comments.each do |comment|%>
+    <p><%= User.find(comment.author_id).name %>: <%= comment.text %></p>
+  <%end%>
+</div>
+<button><%= link_to 'Add a comment', new_user_post_comment_path(@user, @post) %></button>
+<div class='like'><%= button_to 'Like', user_post_likes_path(@user, @post), method: :post %></div>

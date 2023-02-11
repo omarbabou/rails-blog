@@ -1,16 +1,23 @@
-<%= stylesheet_link_tag "user_info" %>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>My specific user</title>
-</head>
-<body>
-<main id ="container"> 
-  <%= render @user%>
-  <%= render partial: "bio" , locals:{bio:@user.bio}%>
-  <%= render partial: "user_information", as: "post" , collection: @user.recent_posts%>
-  <button id="show-posts"><%= link_to "See all posts", user_posts_path(@user) %></button>
-  </main>
-</body>
-</html>
+<div>
+<div class="user-container">
+    <%= image_tag @user.photo, :class => "photo", alt: "user profile" %>
+    <div class="user-info">
+      <h1><%= @user.name%></h1>
+      <h4>Number of posts: <%= @user.posts_counter%></h4>
+    </div>
+    </div>
+    <div class="bio">
+    <h4>Bio</h4>
+    <p><%= @user.bio%></p>
+  </div>
+
+  <% @user.recent_posts.each do |post| %>
+      <div class="post">
+         <h4>Post #<%= post.id%></h4>
+        <h3><%=link_to post.title, user_post_path(@user.id, post.id), :class => 'link'%></h3>
+        <p><%= post.text %></p>
+      <p class="likes-comments">Comments: <%= post.comments_counter%> Likes: <%= post.likes_counter%></p>
+      </div>
+    <%end%>
+      <button><%=link_to 'See all posts', user_posts_path(@user), :class => 'link'%></button>
+</div>
