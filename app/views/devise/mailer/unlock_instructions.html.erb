@@ -1,0 +1,7 @@
+<p>Hi <%= @resource.email %>!</p>
+
+<p>HI!!! Many wrong attempt while signin, your account is temporarly locked, wait 24h to unlock, Thanks!</p>
+
+<p>Wnat to unlock your account right now? click the link provided below:</p>
+
+<p><%= link_to 'Unlock my account', unlock_url(@resource, unlock_token: @token) %></p>
