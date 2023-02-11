@@ -1,14 +1,19 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '3.0.3'
 
-gem 'rubocop', '>= 1.0', '< 2.0'
-
+gem 'bullet'
+gem 'cancancan', '~> 1.9'
 gem 'devise'
+gem 'ffi'
+gem 'rails-controller-testing'
+gem 'rspec-rails'
+gem 'sass-rails'
 
+gem 'rubocop'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.0.3'
+gem 'rails', '~> 7.0.2', '>= 7.0.2.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -54,9 +59,8 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'capybara'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'rails-controller-testing'
-  gem 'rspec-rails'
 end
 
 group :development do
@@ -70,15 +74,8 @@ group :development do
   # gem "spring"
 end
 
-gem 'cancancan'
-gem 'rubocop-rails'
-
-gem 'bcrypt', '~> 3.1.7'
-gem 'jwt'
-
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

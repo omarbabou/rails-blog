@@ -1,24 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  devise_scope :user do
-    authenticated :user do
-      root :to => "users#index", as: :authenticated_root
-    end
-    unauthenticated :user do
-      root :to => "devise/sessions#new", as: :unauthenticated_root
-    end
+ 
+  root to: 'users#index'
+  resources :users, only: %i[index show] do
+    resources :posts, only: %i[index create new show]
   end
-
-  resources :users, only: [:index, :show] do
-  resources :posts, only: [:index, :show, :destroy] do
-    resources :comments, only: [:create, :destroy]
-    resources :likes, only: [:create]
+    resources :posts, only: %i[new create update destroy] do
+      resources :comments
+        resources :likes
   end
-  end
-
-  get "/posts/new", to: "posts#new"
-  post "/posts/create", to: "posts#create"
-  post "/users/:user_id/posts/:id/like", to: "likes#create"
-  post "/users/:user_id/posts/:id/create_comment", to: "comments#create"
-end  
+end

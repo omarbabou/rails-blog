@@ -1,7 +1,18 @@
-<%=form_with model: [:user, post], method: :post, id: 'form' do |form| %>
-  <%=label(:post,:Title)%> 
-  <%=form.text_field :title%>
-  <%=label(:post,:Topic)%> 
-  <%=form.text_area :text%>
-  <%=form.submit "Save" %>
+<h1 class='hello_error'><%= flash[:error] %></h1>
+
+<%= form_with model: @post do |f| %>
+  <div class='title_field'>
+    <%= f.label :title %>
+    <%= f.text_field :Title %>
+  </div>
+
+  <div class='text_tarea'>
+    <%= f.label :text %>
+    <%= f.text_area :Text %>
+  </div>
+
+  <div class='submit_button'>
+    <%= f.submit "Add new post" %>
+  </div>
+  
 <% end %>

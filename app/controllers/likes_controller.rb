@@ -1,20 +1,16 @@
 class LikesController < ApplicationController
-  before_action :authenticate_user!
-
   def create
-    @like = current_user.likes.new(like_params)
-    @like.update_likes_counter
-    respond_to do |format|
-      flash[:notice] = if @like.save
-                         'Liked'
-                       else
-                         'Something went wrong'
-                       end
-      format.html { redirect_to request.path }
+    @post = Post.find(params[:post_id])
+    new_like = current_user.likes.new(
+      user_id: current_user.id,
+      post_id: @post.id
+    )
+    if new_like.save
+      flash[:success] = 'Like saved successfully'
+      redirect_to "/users/#{@post.user_id}/posts/#{@post.id}"
+    else
+      render :new
+      flash.now[:error] = 'Error: Like could not be saved'
     end
-  end
-
-  def like_params
-    params.require(:like).permit(:author_id, :post_id)
   end
 end

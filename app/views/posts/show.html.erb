@@ -1,12 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>My specific post</title>
-</head>
-<body>
-  <main id ="container">
-   <%= render partial: "post_information", locals: {post:@post}%>
-  </main> 
-</body>
-</html>
+<div class="post-container">
+    <div class="post-header">
+        <h2><%= @post.Title %> by <%= @user.Name %></h2>
+        <div class="commentslikes" >
+            <h3>Comments: <%= @post.comments_counter %></h3>
+            <h3>Likes: <%= @post.likes_counter %></h3>
+             <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |f| %>
+    <%= f.submit 'Like' %>
+      
+  <% end %>
+
+        </div>
+    </div>
+    <p><%= @post.Text %></p>
+</div>
+<div class="comments">
+<% @post.comments.each do |comment| %>
+   <h2><%= comment.user.Name%>: <%= comment.Text%></h2>
+    <%= button_to "Delete Comment", post_comment_path(user_id: @user ,post_id: @post, id: comment) , method: :delete if can? :destroy, comment %>
+    
+<%end%>
+<%= render partial: "createcomment", local: { post: @post } %>
+</div>
+  <% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+ <% if can? :destroy, @post %>
+      <%= button_to 'Delete Post', post_path, method: :delete%>
+  <% end %>
+
+
+
+  

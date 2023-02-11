@@ -1,24 +1,38 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>See user's posts</title>
-</head>
-<body>
-  <main id ="container"> 
-  <%= render partial:'users/user', locals:{user: @user} %>
-     <%=link_to new_user_post_path do%>
-   <button class="create-post">Create post</button>
-  <%end%>
-   <% @posts.each do |post| %>
-  <%= render post%>
-   <%if post.comments.length > 0 %>
-   <section class="comment-section">
-    <%= render partial:'comments', as: 'comment', collection:post.recents_comments%>
-   </section>
-   <%end%>
+<div>
+  <div class='user'>
+    <div><img src =#{@user.Photo}></div>
+    <h2>User <%= @user.Name%></h2>
+    <p>Number of posts: <%= @user.posts_counter%></p>
+  </div>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+  <div>
+    <% @posts_list.each do |post| %>
+      <ul class='posts'>
+        <li class='post'>
+          <%= link_to "/users/#{@user.id}/posts/#{post.id}", :action => 'go' do %>
+            <h3>Post # <%= post.Title %></h3>
+          <%end%>
+          <p> Text1: <%= post.Text %></p>
+         
+          <div class='commentslikes'>
+            Comments: <%= post.comments_counter %>
+            Likes: <%= post.likes_counter %>
+          </div>
+           
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <% post.recent_comments.each do |comment| %>
+            <p><%= comment.user.Name %>%: <%= comment.Text %></p>
+          <%end%>
+        </li>
+      </ul>
     <%end%>
-  <button id="show-posts">My pagination</button>
-</main>     
-</body>
-</html>
+  </div>
+</div>
+
