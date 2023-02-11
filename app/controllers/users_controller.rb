@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_request
   def index
-    @users = all_users
+    @users = User.all.order('created_at')
   end
 
   def show

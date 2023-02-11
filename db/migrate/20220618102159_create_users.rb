@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
         t.string :name, null:false, :limit => 32
         t.string :photo, :limit => 2000, null:false
         t.text :bio, null:false
-
+        
         t.timestamps
         t.bigint :posts_counter, null:false, default: 0
       end

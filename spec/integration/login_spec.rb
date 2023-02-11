@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Login', type: :feature do
   before :each do
-    @user = User.create(email: 'obabou50@gmail.com', password: 'password@$', name: 'Test', bio: 'Test bio.',
+    @user = User.create(email: 'pascalkabika123@gmail.com', password: 'Mpangirwa@681', name: 'Test', bio: 'Test bio.',
                         photo: 'https://cdn.pixabay.com/photo/2013/08/29/02/47/eiffel-tower-176935_960_720.jpg')
     visit '/users/sign_in'
   end
