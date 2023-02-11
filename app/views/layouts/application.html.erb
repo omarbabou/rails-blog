@@ -7,17 +7,9 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <div class='link_to_sign'>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-      <% if user_signed_in?%>
-        <%= button_to 'Sign Out', "/users/sign_out", method: :delete %>
-      <% end %>
-    </div>
     <%= yield %>
   </body>
 </html>

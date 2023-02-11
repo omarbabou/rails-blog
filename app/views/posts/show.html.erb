@@ -1,35 +1,15 @@
-<div class="post-container">
-    <div class="post-header">
-        <h2><%= @post.Title %> by <%= @user.Name %></h2>
-        <div class="commentslikes" >
-            <h3>Comments: <%= @post.comments_counter %></h3>
-            <h3>Likes: <%= @post.likes_counter %></h3>
-             <%= form_with url: "/posts/#{@post.id}/likes", scope: :like do |f| %>
-    <%= f.submit 'Like' %>
-      
-  <% end %>
-
-        </div>
-    </div>
-    <p><%= @post.Text %></p>
+<div class="post">
+  <div class="title-info">
+    <h2><%= @post.title%></h2>
+    <p>Comments: <%= @post.comments_counter%> Likes: <%= @post.likes_counter%></p>
+  </div>
+  <p><%= @post.text%></p>
+  <p class="post-author">Written by: <%= @post.author.name%></p>
 </div>
 <div class="comments">
-<% @post.comments.each do |comment| %>
-   <h2><%= comment.user.Name%>: <%= comment.Text%></h2>
-    <%= button_to "Delete Comment", post_comment_path(user_id: @user ,post_id: @post, id: comment) , method: :delete if can? :destroy, comment %>
-    
-<%end%>
-<%= render partial: "createcomment", local: { post: @post } %>
+  <% @post.comments.each do |comment|%>
+    <p><%= User.find(comment.author_id).name %>: <%= comment.text %></p>
+  <%end%>
 </div>
-  <% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
- <% if can? :destroy, @post %>
-      <%= button_to 'Delete Post', post_path, method: :delete%>
-  <% end %>
-
-
-
-  
+<button><%= link_to 'Add a comment', new_user_post_comment_path(@user, @post) %></button>
+<div class='like'><%= button_to 'Like', user_post_likes_path(@user, @post), method: :post %></div>

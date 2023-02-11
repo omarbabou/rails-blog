@@ -1,40 +1,31 @@
+.link {
+  text-decoration: none;
+  color: black;
+}
 
-.users-list {
+.user-container {
   display: flex;
-  flex-direction: row;
-  padding: 10px;
-  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+  padding-bottom: 3%;
 }
 
-.users_img {
-  border: 1px solid black;
-  width: 115px;
-  height: 115px;
-}
-
-.user_item {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  border: 1px solid black;
-  width: 400px;
-  height: 85px;
-}
-
-.posts-count {
-  position: relative;
-  font-size: 15px;
-  margin-left: 150px;
-  margin-top: 50px;
-}
-
-.user-header {
-  display: flex;
-  flex-direction: row;
+.photo {
+  width: 23%;
+  border: 2px solid;
 }
 
 .user-info {
-  display: inline;
-  border: 1px solid black;
-  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  border: 2px solid;
+  padding: 2%;
+  margin: 1% 0;
+}
+
+.bio {
+  border: 2px solid;
+  padding: 2%;
 }

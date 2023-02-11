@@ -1,45 +1,23 @@
-
-.user {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-}
-
-.photo {
-  border: 1px solid gray;
-  width: 5rem;
-  height: 5rem;
-}
-
-.user p {
-  position: relative;
-  top: 2rem;
-  margin: 1rem;
-}
-
-.posts-count {
-  margin-left: 5%;
-}
-
-.post-header {
-  display: flex;
-  flex-direction: row;
-  width: 650px;
-  border: 1px solid black;
-}
-
-.commentslikes {
-  display: flex;
-  flex-direction: row;
-  margin-left: 200px;
-  font-size: 15px;
-}
-
 .post {
-  border: 1px solid black;
-  width: 700px;
+  border: 2px solid;
+  margin: 2% 0 0 0;
+  padding: 2%;
 }
 
-ul li {
-  list-style: none;
+.likes-comments {
+  padding-left: 80%;
+  margin: 0;
+  width: fit-content;
+}
+
+.comments {
+  border: 2px solid;
+  padding: 0 1%;
+  margin: 1px 0;
+}
+
+.title-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
